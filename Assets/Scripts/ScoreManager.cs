@@ -9,7 +9,7 @@ public class ScoreManager: MonoBehaviour
     /// <summary> Отображение игровых очков  </summary>
     [SerializeField] private Text textScore;
 
-    [SerializeField] GameObject gridUpdater;
+    [SerializeField] private GameObject gridUpdater;
     private IGridUpdater iGridUpdater;
 
 
