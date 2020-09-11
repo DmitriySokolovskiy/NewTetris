@@ -24,28 +24,28 @@ public class FigureController : MonoBehaviour
     /// Производит перемещение игровой фигуры, если нажата соответствующая кнопка, если позиция, в которую будет перемещна фигура, корректна.
     /// Если позиция не корректна запускается метод обработки столкновений.  
     /// </summary>
-    public void Move() 
+    private void Move() 
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow)) 
         {
-            if (gridUpdater.CheckPosition(transform, Vector3Int.left * moveStep))
+            if (gridUpdater.CheckPosition(transform, Vector3.left * moveStep))
             {
-                transform.position += Vector3Int.left * moveStep;
+                transform.position += Vector3.left * moveStep;
             }
             else
             {
-                gridUpdater.HandleCollision(transform, Vector3Int.left * moveStep);
+                gridUpdater.HandleCollision(transform, Vector3.left * moveStep);
             }
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (gridUpdater.CheckPosition(transform, Vector3Int.right * moveStep))
+            if (gridUpdater.CheckPosition(transform, Vector3.right * moveStep))
             {            
-                 transform.position += Vector3Int.right * moveStep;
+                 transform.position += Vector3.right * moveStep;
             }
             else
             {
-                gridUpdater.HandleCollision(transform, Vector3Int.right * moveStep);
+                gridUpdater.HandleCollision(transform, Vector3.right * moveStep);
             }
         }
         else if (Input.GetKeyDown(KeyCode.Space))
@@ -62,17 +62,17 @@ public class FigureController : MonoBehaviour
     /// Производит движение фигуры вниз, если  позиция, в которую будет перемещена фигура, корректна, иначе запускается метод обработки столкновений 
     /// </summary>
     /// <returns></returns>
-    IEnumerator MoveFigureDown() 
+    private IEnumerator MoveFigureDown() 
     {
         while (true) 
         {
-            if (gridUpdater.CheckPosition(transform, Vector3Int.down * moveStep))
+            if (gridUpdater.CheckPosition(transform, Vector3.down * moveStep))
             {
-                transform.position += Vector3Int.down * moveStep;
+                transform.position += Vector3.down * moveStep;
             }
             else
             {
-                gridUpdater.HandleCollision(transform, Vector3Int.down * moveStep);
+                gridUpdater.HandleCollision(transform, Vector3.down * moveStep);
                 StopAllCoroutines();
                 enabled = false; 
 

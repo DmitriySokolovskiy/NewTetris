@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    /// <summary> Параметры игровых фигур, необходимые для появления новой фигуры</summary>
+    /// <summary> Параметры игровых фигур, необходимые для создания новой фигуры</summary>
     [SerializeField] private TetrisFigureParameters[] tetrisFiguresParameters;
     /// <summary> Начальная позиция игровой фигуры</summary>
     private Vector3 spawnPos = new Vector3(5, 17, 0);
